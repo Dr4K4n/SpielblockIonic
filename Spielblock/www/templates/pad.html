@@ -4,17 +4,27 @@
 
 <ion-view title="Spielblock">
   <ion-content>
-    <div class="row responsive-sm">
-      <div class="col col-10"></div>
-      <div class="col" ng-repeat="player in data.players">
-        <input type="text" ng-model="player.name" />
-      </div>
+
+    <div ng-show="data.players.length === 0">
+      Bitte füge mit <span class="icon ion-plus-round"></span> einen Spieler hinzu
     </div>
 
-    <div class="row responsive-sm" ng-repeat="round in data.rounds">
-      <div class="col col-10">{{round.number}}<button ng-click="addRound()">+</button></div>
-      <div class="col" ng-repeat="score in round.scores">
-        <input type="text" ng-model="score.score" />
+    <div ng-show="data.players.length > 0" class="list">
+      <div class="row responsive-sm item item-icon-left">
+        <div class="col col-10"><span class="icon ion-person-stalker"></span></div>
+        <div class="col" ng-repeat="player in data.players">
+          <input type="text" ng-model="player.name" />
+        </div>
+      </div>
+
+      <div class="row responsive-sm item" ng-repeat="round in data.rounds">
+        <div class="col col-10">
+          <span ng-show="round.number < data.rounds.length">{{round.number}}</span>
+          <button class="button button-stable" ng-show="round.number === data.rounds.length" ng-click="addRound()">+</button>
+        </div>
+        <div class="col" ng-repeat="score in round.scores">
+          <input type="text" ng-model="score.score" />
+        </div>
       </div>
     </div>
 
