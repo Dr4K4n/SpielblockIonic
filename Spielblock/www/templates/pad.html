@@ -1,7 +1,22 @@
+<ion-nav-buttons side="right">
+  <button class="button button-icon icon ion-plus-round" ng-click="addPlayer()"></button>
+</ion-nav-buttons>
+
 <ion-view title="Spielblock">
   <ion-content>
+    <div class="row responsive-sm">
+      <div class="col col-10"></div>
+      <div class="col" ng-repeat="player in data.players">
+        <input type="text" ng-model="player.name" />
+      </div>
+    </div>
 
-  <h1>Test</h1>
+    <div class="row responsive-sm" ng-repeat="round in data.rounds">
+      <div class="col col-10">{{round.number}}<button ng-click="addRound()">+</button></div>
+      <div class="col" ng-repeat="score in round.scores">
+        <input type="text" ng-model="score.score" />
+      </div>
+    </div>
 
   </ion-content>
 </ion-view>
