@@ -29,56 +29,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-    // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
+    // setup an abstract state for the menus directive
+    .state('app', {
+      url: "/app",
       abstract: true,
-      templateUrl: "templates/tabs.html"
+      templateUrl: "templates/menu.html",
+      controller: 'AppCtrl'
     })
 
-    // Each tab has its own nav history stack:
+    // Each menu has its own nav history stack:
 
-    .state('tab.dash', {
-      url: '/dash',
+    .state('app.pad', {
+      url: '/pad',
       views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
+        'menuContent': {
+          templateUrl: 'templates/pad.html',
+          controller: 'PadCtrl as ctrl'
         }
       }
     })
-
-    .state('tab.friends', {
-      url: '/friends',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
-        }
-      }
-    })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
-        }
-      }
-    })
-
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
-        }
-      }
-    });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/app/pad');
 
 });
 
