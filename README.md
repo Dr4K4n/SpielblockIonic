@@ -6,3 +6,6 @@ Falls du mitmachen möchtest, nutze bitte unser [waffle.io Board](https://waffle
 Bald verfügbar auf [Google Play](https://play.google.com/store/apps/details?id=com.ionicframework.spielblock970656)
 
 Form designed by <a href="http://www.thenounproject.com/dny8">Daniel Yahya</a> from the <a href="http://www.thenounproject.com">Noun Project</a>
+
+
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/Dr4K4n/SpielblockIonic?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
