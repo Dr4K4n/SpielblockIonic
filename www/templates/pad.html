@@ -26,6 +26,16 @@
           <input type="text" ng-model="score.score" />
         </div>
       </div>
+
+      <div class="row responsive-sm item">
+        <div class="col col-10">
+            <span ng-show="data.rounds.length > 0">Summe</span>
+        </div>
+        <div class="col" ng-repeat="player in data.players">
+          {{ getScoreSum($index) }}
+        </div>
+      </div>      
+
     </div>
 
   </ion-content>
